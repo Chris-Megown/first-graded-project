@@ -19,6 +19,12 @@ public class FortuneTeller {
 		System.out.println("How many siblings do you have?");
 		int siblingCount = input.nextInt();
 		input.close();
+		String firstNameLower = firstName.toLowerCase();
+		String capitalFirstName = firstNameLower.substring(0, 1).toUpperCase()
+				+ firstNameLower.substring(1, firstNameLower.length());
+		String lastNameLower = lastName.toLowerCase();
+		String capitalLastName = lastNameLower.substring(0, 1).toUpperCase()
+				+ lastNameLower.substring(1, lastNameLower.length());
 
 		// Retirement years
 		int retirementYears;
@@ -78,8 +84,8 @@ public class FortuneTeller {
 		}
 
 		// The end result
-		System.out.println(firstName + " " + lastName + " will retire in " + retirementYears + " years with $"
-				+ endingBankBalance + ",\na vacation home in " + vacationLocation
+		System.out.println(capitalFirstName + " " + capitalLastName + " will retire in " + retirementYears + " years with $"
+				+ endingBankBalance + " in the bank,\na vacation home in " + vacationLocation
 				+ ", \nand will move about the earth via a" + modeOfTransportation + "!!");
 
 	}
