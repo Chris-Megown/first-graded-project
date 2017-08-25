@@ -16,9 +16,15 @@ public class FortuneTeller {
 		int monthBorn = input.nextInt();
 		System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
 		String favColor = input.next();
+
+		while (favColor.equalsIgnoreCase("help")) {
+			System.out.println(" The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
+			System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
+			favColor = input.next();
+		}
+
 		System.out.println("How many siblings do you have?");
 		int siblingCount = input.nextInt();
-		input.close();
 		String firstNameLower = firstName.toLowerCase();
 		String capitalFirstName = firstNameLower.substring(0, 1).toUpperCase()
 				+ firstNameLower.substring(1, firstNameLower.length());
@@ -54,21 +60,20 @@ public class FortuneTeller {
 
 		// Mode of Transportation
 		String modeOfTransportation = null;
-
 		if (favColor.toLowerCase().equals("red")) {
-			modeOfTransportation = " Golden Segway";
+			modeOfTransportation = " riding a golden segway";
 		} else if (favColor.toLowerCase().equals("orange")) {
-			modeOfTransportation = "n Oscar Mayer Weinermobile";
+			modeOfTransportation = "driving an Oscar Mayer Weinermobile";
 		} else if (favColor.toLowerCase().equals("yellow")) {
-			modeOfTransportation = " Jeep Wrangler";
+			modeOfTransportation = " driving a jeep wrangler";
 		} else if (favColor.toLowerCase().equals("green")) {
-			modeOfTransportation = " Tank";
+			modeOfTransportation = " driving a tank";
 		} else if (favColor.toLowerCase().equals("blue")) {
-			modeOfTransportation = " Private Jet";
+			modeOfTransportation = " flying a private jet";
 		} else if (favColor.toLowerCase().equals("indigo")) {
-			modeOfTransportation = " Tamed Lion named Stu";
+			modeOfTransportation = " riding a tamed lion named Stu";
 		} else if (favColor.toLowerCase().equals("violet")) {
-			modeOfTransportation = " Jetpack";
+			modeOfTransportation = " flying a Jetpack";
 		}
 
 		// Bank Balance
@@ -84,9 +89,9 @@ public class FortuneTeller {
 		}
 
 		// The end result
-		System.out.println(capitalFirstName + " " + capitalLastName + " will retire in " + retirementYears + " years with $"
-				+ endingBankBalance + " in the bank,\na vacation home in " + vacationLocation
-				+ ", \nand will move about the earth via a" + modeOfTransportation + "!!");
+		System.out.println(capitalFirstName + " " + capitalLastName + " will retire in " + retirementYears
+				+ " years with $" + endingBankBalance + " in the bank,\na vacation home in " + vacationLocation
+				+ ", \nand will travel by" + modeOfTransportation + "!!");
 
 	}
 
