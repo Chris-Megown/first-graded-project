@@ -22,9 +22,9 @@ public class FortuneTeller {
 			System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
 			favColor = input.next();
 		}
-
 		System.out.println("How many siblings do you have?");
 		int siblingCount = input.nextInt();
+		input.close();
 		String firstNameLower = firstName.toLowerCase();
 		String capitalFirstName = firstNameLower.substring(0, 1).toUpperCase()
 				+ firstNameLower.substring(1, firstNameLower.length());
@@ -77,6 +77,7 @@ public class FortuneTeller {
 		}
 
 		// Bank Balance
+
 		double endingBankBalance = 0;
 		if (monthBorn > 0 && monthBorn <= 4) {
 			endingBankBalance = 125000;
