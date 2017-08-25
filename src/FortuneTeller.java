@@ -16,7 +16,7 @@ public class FortuneTeller {
 		int monthBorn = input.nextInt();
 		System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
 		String favColor = input.next();
-
+// hola
 		while (favColor.equalsIgnoreCase("help")) {
 			System.out.println(" The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
 			System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
