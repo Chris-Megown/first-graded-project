@@ -86,7 +86,7 @@ public class FortuneTeller {
 		} else if (monthBorn >= 9 && monthBorn <= 12) {
 			endingBankBalance = 5000000;
 		} else {
-			endingBankBalance = .25;
+			endingBankBalance = 0.00;
 		}
 
 		// The end result
