@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Locale;
+import java.text.NumberFormat;
 
 public class FortuneTeller {
 
@@ -63,7 +65,7 @@ public class FortuneTeller {
 		if (favColor.toLowerCase().equals("red")) {
 			modeOfTransportation = " riding a golden segway";
 		} else if (favColor.toLowerCase().equals("orange")) {
-			modeOfTransportation = "driving an Oscar Mayer Weinermobile";
+			modeOfTransportation = " driving an Oscar Mayer Weinermobile";
 		} else if (favColor.toLowerCase().equals("yellow")) {
 			modeOfTransportation = " driving a jeep wrangler";
 		} else if (favColor.toLowerCase().equals("green")) {
@@ -79,6 +81,7 @@ public class FortuneTeller {
 		// Bank Balance
 
 		double endingBankBalance = 0;
+		NumberFormat moneyFormatter = NumberFormat.getCurrencyInstance();
 		if (monthBorn > 0 && monthBorn <= 4) {
 			endingBankBalance = 125000;
 		} else if (monthBorn >= 5 && monthBorn <= 8) {
@@ -91,8 +94,8 @@ public class FortuneTeller {
 
 		// The end result
 		System.out.println(capitalFirstName + " " + capitalLastName + " will retire in " + retirementYears
-				+ " years with $" + endingBankBalance + " in the bank,\na vacation home in " + vacationLocation
-				+ ", \nand will travel by" + modeOfTransportation + "!!");
+				+ " years with " + moneyFormatter.format(endingBankBalance) + " in the bank,\na vacation home in "
+				+ vacationLocation + ", \nand will travel by" + modeOfTransportation + "!!");
 
 	}
 
