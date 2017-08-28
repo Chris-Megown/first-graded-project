@@ -1,31 +1,60 @@
 import java.util.Scanner;
-import java.util.Locale;
 import java.text.NumberFormat;
 
 public class FortuneTeller {
 
 	public static void main(String[] args) {
-		// Main variables
+		// Input variables
 		Scanner input = new Scanner(System.in);
 		System.out.println("I would like to reveal your fortune,\nbut first I am going to need some information.");
+		System.out.println(
+				"If you don't believe in fortunes,\nor do not wish to be a part of the fun,\nat any point simply type \"Quit\".");
 		System.out.println("What is your first name?");
 		String firstName = input.next();
+		if (firstName.toLowerCase().equals("quit")) {
+			System.out.println("Nobody Like a quitter...");
+			System.exit(0);
+		}
 		System.out.println("What is your last name?");
 		String lastName = input.next();
+		if (lastName.toLowerCase().equals("quit")) {
+			System.out.println("Nobody Like a quitter...");
+			System.exit(0);
+		}
 		System.out.println("How old are you? (In years plz)");
-		int ageOfPerson = input.nextInt();
+		String ageOfPerson = input.next();
+		if (ageOfPerson.toLowerCase().equals("quit")) {
+			System.out.println("Nobody Like a quitter...");
+			System.exit(0);
+		}
+		int ageOfPersonConverted = Integer.parseInt(ageOfPerson);
 		System.out.println("What month were you born in? (1-12)");
-		int monthBorn = input.nextInt();
+		String monthBorn = input.next();
+		if (monthBorn.toLowerCase().equals("quit")) {
+			System.out.println("Nobody Like a quitter...");
+			System.exit(0);
+		}
+		int monthBornConverted = Integer.parseInt(monthBorn);
 		System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
 		String favColor = input.next();
 
 		while (favColor.equalsIgnoreCase("help")) {
-			System.out.println(" The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
+			System.out.println("The ROYGBIV colors are Red, Orange, Yellow, Green, Blue, Indigo, Violet.");
 			System.out.println("What is your favorite ROYGBIV color? (not sure what ROYGBIV means...type HELP)");
 			favColor = input.next();
 		}
+		if (favColor.toLowerCase().equals("quit")) {
+			System.out.println("Nobody Like a quitter...");
+			System.exit(0);
+		}
 		System.out.println("How many siblings do you have?");
-		int siblingCount = input.nextInt();
+		String siblingCount = input.next();
+		if (firstName.toLowerCase().equals("quit")) {
+			System.out.println("Nobody Like a quitter...");
+			System.exit(0);
+		}
+		int siblingCountConverted = Integer.parseInt(siblingCount);
+
 		input.close();
 		String firstNameLower = firstName.toLowerCase();
 		String capitalFirstName = firstNameLower.substring(0, 1).toUpperCase()
@@ -37,7 +66,7 @@ public class FortuneTeller {
 		// Retirement years
 		int retirementYears;
 
-		if (ageOfPerson % 2 == 0) {
+		if (ageOfPersonConverted % 2 == 0) {
 			retirementYears = 20;
 		} else {
 			retirementYears = 35;
@@ -46,17 +75,17 @@ public class FortuneTeller {
 		// Vacation Location
 		String vacationLocation = null;
 
-		if (siblingCount == 0) {
+		if (siblingCountConverted == 0) {
 			vacationLocation = "Washington, DC";
-		} else if (siblingCount == 1) {
+		} else if (siblingCountConverted == 1) {
 			vacationLocation = "Fremont, California";
-		} else if (siblingCount == 2) {
+		} else if (siblingCountConverted == 2) {
 			vacationLocation = "Denver, Colorado";
-		} else if (siblingCount == 3) {
+		} else if (siblingCountConverted == 3) {
 			vacationLocation = "Nashville, Tennessee";
-		} else if (siblingCount > 3) {
+		} else if (siblingCountConverted > 3) {
 			vacationLocation = "Salt Lake City, Utah";
-		} else if (siblingCount < 0) {
+		} else if (siblingCountConverted < 0) {
 			vacationLocation = "Downtown Detroit...in a box";
 		}
 
@@ -67,7 +96,7 @@ public class FortuneTeller {
 		} else if (favColor.toLowerCase().equals("orange")) {
 			modeOfTransportation = " driving an Oscar Mayer Weinermobile";
 		} else if (favColor.toLowerCase().equals("yellow")) {
-			modeOfTransportation = " driving a jeep wrangler";
+			modeOfTransportation = " driving a Jeep Wrangler";
 		} else if (favColor.toLowerCase().equals("green")) {
 			modeOfTransportation = " driving a tank";
 		} else if (favColor.toLowerCase().equals("blue")) {
@@ -75,18 +104,18 @@ public class FortuneTeller {
 		} else if (favColor.toLowerCase().equals("indigo")) {
 			modeOfTransportation = " riding a tamed lion named Stu";
 		} else if (favColor.toLowerCase().equals("violet")) {
-			modeOfTransportation = " flying a Jetpack";
+			modeOfTransportation = " flying a jetpack";
 		}
 
 		// Bank Balance
 
 		double endingBankBalance = 0;
 		NumberFormat moneyFormatter = NumberFormat.getCurrencyInstance();
-		if (monthBorn > 0 && monthBorn <= 4) {
+		if (monthBornConverted > 0 && monthBornConverted <= 4) {
 			endingBankBalance = 125000;
-		} else if (monthBorn >= 5 && monthBorn <= 8) {
+		} else if (monthBornConverted >= 5 && monthBornConverted <= 8) {
 			endingBankBalance = 225000;
-		} else if (monthBorn >= 9 && monthBorn <= 12) {
+		} else if (monthBornConverted >= 9 && monthBornConverted <= 12) {
 			endingBankBalance = 5000000;
 		} else {
 			endingBankBalance = 0.00;
